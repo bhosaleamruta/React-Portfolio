@@ -1,0 +1,133 @@
+/* ─── GOOGLE FONTS FALLBACK ─── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap');
+
+/* ─── TOKENS ─── */
+:root {
+  --rose:   #FF3CAC;
+  --violet: #784BA0;
+  --indigo: #2B86C5;
+  --gold:   #F5A623;
+  --lime:   #A8FF78;
+
+  --grad-main: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  --grad-soft: linear-gradient(135deg, rgba(255,60,172,0.18), rgba(120,75,160,0.18), rgba(43,134,197,0.18));
+}
+
+[data-theme='dark'] {
+  --bg:      #080810;
+  --bg2:     #0E0E1A;
+  --bg3:     #14142A;
+  --card:    #111122;
+  --card2:   #1A1A30;
+  --border:  rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.12);
+  --text:    #F0EFF8;
+  --text2:   #9090BB;
+  --text3:   #4A4A70;
+  --shadow:  rgba(255,60,172,0.15);
+}
+
+[data-theme='light'] {
+  --bg:      #F8F7FF;
+  --bg2:     #EFEEFC;
+  --bg3:     #E4E2F8;
+  --card:    #FFFFFF;
+  --card2:   #F2F1FB;
+  --border:  rgba(0,0,0,0.07);
+  --border2: rgba(0,0,0,0.14);
+  --text:    #0D0C1E;
+  --text2:   #505080;
+  --text3:   #A0A0C0;
+  --shadow:  rgba(120,75,160,0.12);
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb {
+  background: var(--grad-main);
+  border-radius: 100px;
+}
+
+/* ─── SELECTION ─── */
+::selection {
+  background: rgba(255, 60, 172, 0.25);
+  color: var(--text);
+}
+
+/* ─── SHARED SECTION ─── */
+section { padding: 7rem 5vw; position: relative; z-index: 1; }
+
+/* ─── REVEAL ANIMATION ─── */
+.rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.rv.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── GRADIENT TEXT UTIL ─── */
+.grad-text {
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -40px) scale(1.06); }
+  66%       { transform: translate(-20px, 20px) scale(0.95); }
+}
+@keyframes float-photo {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-16px); }
+}
+@keyframes ring-rotate {
+  to { filter: hue-rotate(360deg); }
+}
+@keyframes badge-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-8px) rotate(2deg); }
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-slide {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.5); }
+}

@@ -1,0 +1,124 @@
+.projects-section { background: var(--bg2); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.proj {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.35s;
+  display: flex;
+  flex-direction: column;
+}
+.proj:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 60, 172, 0.3);
+  box-shadow: 0 24px 70px var(--shadow);
+}
+
+.proj-banner {
+  height: 4px;
+  background: var(--grad-main);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.proj:hover .proj-banner { opacity: 1; }
+
+.proj-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+.proj-ico-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.proj-ico {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.proj-year {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+
+.proj-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.proj-cat {
+  font-size: 0.78rem;
+  color: var(--rose);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.proj-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.proj-points li {
+  font-size: 0.84rem;
+  color: var(--text2);
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.6;
+}
+.proj-points li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 6px;
+  height: 1.5px;
+  background: var(--grad-main);
+  display: block;
+}
+
+.proj-foot {
+  padding: 1.2rem 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.proj-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: var(--bg3);
+  color: var(--text3);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,41 @@
+.ticker {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 0.85rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 2.5rem;
+  animation: ticker-scroll 30s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.ticker-track span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+
+.ticker-track span b {
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.ticker-sep {
+  color: var(--text3) !important;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}

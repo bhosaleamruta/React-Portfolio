@@ -1,0 +1,15 @@
+.footer {
+  padding: 1.8rem 5vw;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+.footer-right {
+  font-size: 0.75rem;
+}
